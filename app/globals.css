@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --primary: 25, 100%, 50%;
+  /* Brand Orange */
+  --secondary: 220, 68%, 18%;
+  /* Deep Navy */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+/* 1. TOUCH TARGETS & ACCESSIBILITY (UX RULE) */
+button,
+a {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 2. CORE WEB VITALS: PREVENT LAYOUT SHIFT (CLS) */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 3. MOBILE EMERGENCY STICKY BAR (THUMB ZONE) */
+.mobile-sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: hsl(var(--secondary));
+  padding: 12px;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .mobile-sticky-cta {
+    display: none;
+  }
+}
+
+/* 4. TYPOGRAPHY (READABILITY) */
+p {
+  font-size: 1.0625rem;
+  /* 17px for readability */
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.02em;
+}
+
+/* 5. NO HORIZONTAL SCROLL ENFORCEMENT */
+html,
+body {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+/* 6. ANIMATIONS */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* 7. SELECTION STYLES */
+::selection {
+  background: hsl(25, 100%, 50%);
+  color: white;
+}
