@@ -259,7 +259,7 @@ export default function ManchesterCityCentrePage() {
                                         },
                                         {
                                             q: 'Can you meet me at a specific landmark?',
-                                            a: 'Yes. Tell us your exact location (e.g. "outside Piccadilly Station entrance" or "Spinningfields by Left Bank"). We'll find you.',
+                                            a: "Yes. Tell us your exact location (e.g. \"outside Piccadilly Station entrance\" or \"Spinningfields by Left Bank\"). We'll find you.",
                                         },
                                     ].map((faq, index) => (
                                         <div key={index} className="bg-gray-50 p-6 rounded-lg border border-gray-200">

@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Phone, CheckCircle2, Car, Wrench, Shield, Clock } from 'lucide-react';
+import { Phone, CheckCircle2, Car, Wrench, Shield } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/metadata';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/FooterEnhanced';
@@ -246,7 +246,7 @@ export default function BMWLocksmithPage() {
                                         },
                                         {
                                             q: 'Can you program BMW keys on Sunday or bank holidays?',
-                                            a: 'Yes, we operate 24/7 including weekends and bank holidays. BMW dealerships are typically closed, but we're available across Manchester.',
+                                            a: "Yes, we operate 24/7 including weekends and bank holidays. BMW dealerships are typically closed, but we're available across Manchester.",
                                         },
                                     ].map((faq, index) => (
                                         <div key={index} className="bg-white p-6 rounded-lg border border-gray-200">

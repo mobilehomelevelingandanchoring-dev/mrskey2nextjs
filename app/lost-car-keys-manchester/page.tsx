@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { Phone, CheckCircle2, Key, Car, Clock, Shield } from 'lucide-react';
+import { Phone, CheckCircle2, Key, Car, Shield } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/metadata';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/FooterEnhanced';
