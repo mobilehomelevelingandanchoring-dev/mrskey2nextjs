@@ -38,6 +38,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
         'oldham-auto-locksmith',
     ];
 
+    // Vehicle brand pages (Topical Authority - Level 2)
+    const vehicleBrands = [
+        'bmw-auto-locksmith-manchester',
+        'volkswagen-locksmith-manchester',
+        'audi-auto-locksmith-manchester',
+        'mercedes-auto-locksmith-manchester',
+        'ford-auto-locksmith-manchester',
+        'vauxhall-locksmith-manchester',
+    ];
+
+    // Emergency scenario pages (Level 3)
+    const emergencyScenarios = [
+        'lost-car-keys-manchester',
+        'keys-locked-in-boot-manchester',
+        'broken-key-in-ignition-manchester',
+    ];
+
+    // Hyper-local area pages (Level 3)
+    const hyperLocalAreas = [
+        'auto-locksmith-manchester-city-centre',
+        'auto-locksmith-salford-quays',
+        'auto-locksmith-didsbury',
+        'auto-locksmith-chorlton',
+    ];
+
+    // Technical/Trust pages (Level 2 & 4)
+    const technicalPages = [
+        '24-hour-auto-locksmith-manchester',
+        'transponder-car-keys-manchester',
+    ];
+
     return [
         ...staticPages.map(page => ({
             url: `${baseUrl}${page}`,
@@ -56,6 +87,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified: new Date(),
             changeFrequency: 'weekly' as const,
             priority: 0.8,
+        })),
+        ...vehicleBrands.map(brand => ({
+            url: `${baseUrl}/${brand}`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly' as const,
+            priority: 0.85,
+        })),
+        ...emergencyScenarios.map(scenario => ({
+            url: `${baseUrl}/${scenario}`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly' as const,
+            priority: 0.85,
+        })),
+        ...hyperLocalAreas.map(area => ({
+            url: `${baseUrl}/${area}`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly' as const,
+            priority: 0.8,
+        })),
+        ...technicalPages.map(tech => ({
+            url: `${baseUrl}/${tech}`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly' as const,
+            priority: 0.9,
         })),
     ];
 }
