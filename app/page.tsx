@@ -25,16 +25,16 @@ export default function HomePage() {
 
     const faqSchema = generateFAQSchema([
         {
-            q: 'Do you offer 24/7 emergency auto locksmith services in Manchester?',
-            a: 'Yes, Key 2 BHP Auto Locksmith Ltd provides 24/7 emergency services across Manchester and Tameside. We respond to car lockouts and lost keys any time of day or night.',
+            question: 'Do you offer 24/7 emergency auto locksmith services in Manchester?',
+            answer: 'Yes, Key 2 BHP Auto Locksmith Ltd provides 24/7 emergency services across Manchester and Tameside. We respond to car lockouts and lost keys any time of day or night.',
         },
         {
-            q: 'How quickly can you replace lost car keys?',
-            a: 'We offer same-day car key replacement. Our mobile locksmiths typically arrive within 30-60 minutes in Manchester and can cut and program new keys on-site.',
+            question: 'How quickly can you replace lost car keys?',
+            answer: 'We offer same-day car key replacement. Our mobile locksmiths typically arrive within 30-60 minutes in Manchester and can cut and program new keys on-site.',
         },
         {
-            q: 'What areas do you cover?',
-            a: 'We cover all of Manchester, Denton, Stockport, Hyde, and the Tameside area. Our mobile service comes directly to your location.',
+            question: 'What areas do you cover?',
+            answer: 'We cover all of Manchester, Denton, Stockport, Hyde, and the Tameside area. Our mobile service comes directly to your location.',
         },
     ]);
 

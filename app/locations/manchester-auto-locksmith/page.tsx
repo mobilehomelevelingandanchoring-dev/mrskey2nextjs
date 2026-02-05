@@ -2,18 +2,64 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Phone, CheckCircle2, MapPin, Clock, ShieldCheck } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/metadata';
+import { generateLocalBusinessSchema, generateFAQSchema, generateBreadcrumbSchema } from '@/lib/schema';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/FooterEnhanced';
 import MobileCallButton from '@/components/layout/MobileCallButton';
 
 export const metadata: Metadata = {
-    title: 'Manchester Auto Locksmith | 24/7 Car Key Replacement & Unlocks',
-    description: `Need an Auto Locksmith in Manchester? We are local, mobile & fast. Car key replacement, lockouts, and fob programming. 24/7 Emergency Service. Call ${SITE_CONFIG.phoneDisplay}.`,
+    title: 'Auto Locksmith Manchester | 24/7 Emergency Car Key Service',
+    description: `Manchester auto locksmith. Emergency car key replacement, lockouts, programming across M1-M99. 30-90 min response. UK Registered Company No. ${SITE_CONFIG.companyNumber}. Call ${SITE_CONFIG.phoneDisplay}.`,
 };
 
+const faqs = [
+    {
+        question: 'Do you cover all of Manchester postcodes?',
+        answer: 'Yes, we cover all Manchester postcodes M1-M99, from City Centre (M1-M4) to Greater Manchester areas including Salford Quays, Didsbury, Chorlton, Withington, Fallowfield, and beyond the M60 motorway.',
+    },
+    {
+        question: 'How quickly can you arrive in Manchester?',
+        answer: 'Response times vary by location: Manchester City Centre 20-30 minutes, M1-M20 postcodes 30-60 minutes, Greater Manchester 60-90 minutes. Traffic conditions permitting.',
+    },
+    {
+        question: 'Can you program keys for BMW, Mercedes, and Audi in Manchester?',
+        answer: 'Yes, we specialize in German vehicle security systems including BMW EWS/CAS, Mercedes EIS/Keyless Go, Audi MQB, and VW KESSY using Autel IM608 Pro diagnostic equipment.',
+    },
+    {
+        question: 'What if I am parked at Arndale Centre or other Manchester car parks?',
+        answer: 'We access multi-storey car parks throughout Manchester including Arndale, Spinningfields, and NCP locations. Our vans are height-compatible or we carry portable equipment.',
+    },
+    {
+        question: 'Are your prices fixed for Manchester call-outs?',
+        answer: 'We provide a fixed quote before dispatch. No hidden charges, no premium night rates. Transparent pricing for all Manchester and Greater Manchester locations.',
+    },
+];
+
 export default function ManchesterLocationPage() {
+    const localBusinessSchema = generateLocalBusinessSchema({
+        areaServed: [
+            { '@type': 'City', name: 'Manchester' },
+            { '@type': 'City', name: 'Salford' },
+            { '@type': 'City', name: 'Trafford' },
+            { '@type': 'City', name: 'Stockport' },
+            { '@type': 'City', name: 'Tameside' },
+        ],
+    });
+
+    const faqSchema = generateFAQSchema(faqs);
+
+    const breadcrumbSchema = generateBreadcrumbSchema([
+        { name: 'Home', url: SITE_CONFIG.url },
+        { name: 'Locations', url: `${SITE_CONFIG.url}/locations` },
+        { name: 'Manchester Auto Locksmith', url: `${SITE_CONFIG.url}/locations/manchester-auto-locksmith` },
+    ]);
+
     return (
         <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+
             <div className="min-h-screen">
                 <Navbar />
 
@@ -23,10 +69,10 @@ export default function ManchesterLocationPage() {
                         <div className="container mx-auto px-4">
                             <div className="max-w-4xl mx-auto text-center">
                                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                                    Manchester Auto Locksmith
+                                    Auto Locksmith Manchester | 24/7 Emergency Service
                                 </h1>
                                 <p className="text-xl md:text-2xl mb-8 text-gray-200">
-                                    Lost keys in Manchester? Locked out in the City Centre? {SITE_CONFIG.siteName} is your local 24/7 emergency response team.
+                                    Emergency car locksmith serving Manchester M1-M99 postcodes. Lost keys, lockouts, programming. 30-90 minute response across City Centre, Salford Quays, Didsbury, M60 motorway.
                                 </p>
                                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                                     <a
@@ -34,7 +80,7 @@ export default function ManchesterLocationPage() {
                                         className="inline-flex items-center gap-2 bg-[hsl(25,100%,50%)] hover:bg-[hsl(25,100%,45%)] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all shadow-lg hover:shadow-xl"
                                     >
                                         <Phone className="w-5 h-5" />
-                                        Call Manchester Team
+                                        Call Manchester: {SITE_CONFIG.phoneDisplay}
                                     </a>
                                 </div>
                             </div>
@@ -46,10 +92,13 @@ export default function ManchesterLocationPage() {
                         <div className="container mx-auto px-4">
                             <div className="max-w-4xl mx-auto border-l-4 border-[hsl(25,100%,50%)] pl-6">
                                 <h2 className="text-2xl font-bold mb-4 text-[hsl(220,68%,18%)]">
-                                    Your Local Manchester Car Locksmiths
+                                    Professional Auto Locksmith Services Across Manchester
                                 </h2>
-                                <p className="text-lg text-gray-700 font-medium">
-                                    We provide rapid response auto locksmith services across **Manchester and Greater Manchester**. As a **UK Registered Company**, we guarantee professional, insured service whether you are at the Arndale, Old Trafford, or your home driveway. No call centers—direct to local locksmith.
+                                <p className="text-lg text-gray-700 mb-4">
+                                    {SITE_CONFIG.siteName} (UK Registered Company No. {SITE_CONFIG.companyNumber}) provides emergency auto locksmith services across all Manchester postcodes M1-M99. We cover Manchester City Centre, Northern Quarter, Spinningfields, Deansgate, along the M60 motorway corridor, and throughout Greater Manchester including Salford, Trafford, Stockport, Tameside, Bolton, and Oldham.
+                                </p>
+                                <p className="text-lg text-gray-700">
+                                    Our mobile vans carry professional key programming equipment including Autel IM608 Pro, Lishi lock picks, precision laser cutting machines, and manufacturer-grade diagnostic tools for BMW, Mercedes, Audi, VW, Ford, and all major vehicle makes.
                                 </p>
                             </div>
                         </div>

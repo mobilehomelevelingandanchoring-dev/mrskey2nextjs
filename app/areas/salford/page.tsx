@@ -15,8 +15,7 @@ export const metadata: Metadata = {
 export default function SalfordPage() {
     const serviceSchema = generateServiceSchema(
         'Auto Locksmith Salford',
-        'Professional mobile auto locksmith service in Salford. 24/7 emergency car key replacement, lockout service, and key programming across all Salford areas.',
-        `${SITE_CONFIG.url}/areas/salford`
+        'Professional mobile auto locksmith service in Salford. 24/7 emergency car key replacement, lockout service, and key programming across all Salford areas.'
     );
 
     const breadcrumbSchema = generateBreadcrumbSchema([

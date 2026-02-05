@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import { generateLocalBusinessSchema, generateOrganizationSchema } from '@/lib/schema';
+import { generateLocalBusinessSchema } from '@/lib/schema';
 import { SITE_CONFIG } from '@/lib/metadata';
 
 const inter = Inter({
@@ -79,18 +79,11 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     const localBusinessSchema = generateLocalBusinessSchema();
-    const organizationSchema = generateOrganizationSchema();
 
     return (
         <html lang="en" suppressHydrationWarning>
             <head>
                 {/* JSON-LD Schema for SEO Authority */}
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify(organizationSchema),
-                    }}
-                />
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
