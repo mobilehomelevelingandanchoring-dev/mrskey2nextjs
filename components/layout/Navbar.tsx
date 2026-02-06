@@ -66,6 +66,7 @@ export default function Navbar() {
                         <Link href="/" className="hover:text-[hsl(25,100%,50%)] font-bold text-sm tracking-tight transition-colors">HOME</Link>
                         <Link href="/services" className="hover:text-[hsl(25,100%,50%)] font-bold text-sm tracking-tight transition-colors">SERVICES</Link>
                         <Link href="/locations" className="hover:text-[hsl(25,100%,50%)] font-bold text-sm tracking-tight transition-colors">LOCATIONS</Link>
+                        <Link href="/faq" className="hover:text-[hsl(25,100%,50%)] font-bold text-sm tracking-tight transition-colors">FAQ</Link>
                         <Link href="/contact" className="hover:text-[hsl(25,100%,50%)] font-bold text-sm tracking-tight transition-colors">CONTACT</Link>
                         <a href={`tel:${SITE_CONFIG.phone}`} className="flex items-center gap-3 bg-[hsl(25,100%,50%)] px-6 py-3 rounded-xl font-black transition-all hover:scale-105 active:scale-95">
                             <Phone className="w-5 h-5 fill-current" /> {SITE_CONFIG.phoneDisplay}
@@ -139,6 +140,7 @@ export default function Navbar() {
                             </div>
                         </div>
 
+                        <Link href="/faq" onClick={() => setIsOpen(false)} className="block py-6 text-3xl font-black border-b border-white/5 uppercase">FAQ</Link>
                         <Link href="/about" onClick={() => setIsOpen(false)} className="block py-6 text-3xl font-black border-b border-white/5 uppercase">About Us</Link>
                         <Link href="/contact" onClick={() => setIsOpen(false)} className="block py-6 text-3xl font-black border-b border-white/5 uppercase">Contact</Link>
                     </div>

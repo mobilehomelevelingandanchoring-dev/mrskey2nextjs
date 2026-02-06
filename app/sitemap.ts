@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/services',
         '/locations',
         '/areas',
+        '/faq',
     ];
 
     // Service pages (Silo 1)
