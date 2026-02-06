@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/contact',
         '/services',
         '/locations',
+        '/areas',
     ];
 
     // Service pages (Silo 1)
@@ -36,6 +37,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
         'hyde-auto-locksmith',
         'bolton-auto-locksmith',
         'oldham-auto-locksmith',
+        'city-1-auto-locksmith',
+        'city-2-auto-locksmith',
+    ];
+
+    // Additional area pages
+    const areaPages = [
+        'salford',
     ];
 
     // Vehicle brand pages (Topical Authority - Level 2)
@@ -111,6 +119,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified: new Date(),
             changeFrequency: 'weekly' as const,
             priority: 0.9,
+        })),
+        ...areaPages.map(area => ({
+            url: `${baseUrl}/areas/${area}`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly' as const,
+            priority: 0.75,
         })),
     ];
 }
