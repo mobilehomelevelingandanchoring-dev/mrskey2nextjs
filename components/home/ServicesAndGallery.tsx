@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const Gallery = () => {
     const gallery = [
@@ -31,13 +32,17 @@ const Gallery = () => {
                     {gallery.map((src, index) => (
                         <div
                             key={index}
-                            className="break-inside-avoid overflow-hidden rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500 group"
+                            className="break-inside-avoid overflow-hidden rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500 group relative"
                         >
-                            <img
+                            <Image
                                 src={src}
-                                alt={`Auto Locksmith Work ${index + 1}`}
+                                alt={`Professional auto locksmith service - car key replacement and programming work ${index + 1}`}
+                                width={400}
+                                height={300}
                                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
                                 loading="lazy"
+                                quality={85}
+                                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                             />
                         </div>
                     ))}
