@@ -22,7 +22,7 @@ const Gallery = () => {
                     <h2 className="text-4xl md:text-6xl font-black text-[hsl(220,68%,18%)] mb-6 tracking-tight">
                         Proof of Our <span className="text-[hsl(25,100%,50%)]">Workmanship</span>
                     </h2>
-                    <p className="text-lg text-gray-500 leading-relaxed max-w-2xl">
+                    <p className="text-lg text-gray-700 leading-relaxed max-w-2xl">
                         Real jobs, real results. We take pride in our non-destructive entry techniques and precision car key cutting across Greater Manchester.
                     </p>
                 </div>

@@ -45,7 +45,7 @@ export default function ServicesGrid() {
         <section className="py-20 bg-gray-50">
             <div className="container mx-auto px-4">
                 <div className="mb-16">
-                    <div className="inline-block bg-[hsl(25,100%,50%)]/10 text-[hsl(25,100%,50%)] px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest mb-4">
+                    <div className="inline-block bg-[hsl(25,100%,50%)]/10 text-[hsl(25,100%,40%)] px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest mb-4 border border-[hsl(25,100%,50%)]/20">
                         Professional Services
                     </div>
                     <h2 className="text-3xl md:text-5xl font-black mb-6 text-[hsl(220,68%,18%)] tracking-tight">
@@ -71,12 +71,12 @@ export default function ServicesGrid() {
                                 <h3 className="text-2xl font-black mb-4 group-hover:text-[hsl(25,100%,50%)] transition-colors">
                                     {service.title}
                                 </h3>
-                                <p className="text-gray-500 mb-8 flex-1 leading-relaxed">
+                                <p className="text-gray-700 mb-8 flex-1 leading-relaxed">
                                     {service.description}
                                 </p>
-                                <div className="flex items-center gap-2 font-bold text-sm uppercase tracking-widest text-gray-400 group-hover:text-[hsl(25,100%,50%)] transition-colors">
+                                <div className="flex items-center gap-2 font-bold text-sm uppercase tracking-widest text-gray-600 group-hover:text-[hsl(25,100%,50%)] transition-colors">
                                     Learn More
-                                    <ChevronRight className="w-4 h-4 translate-x-0 group-hover:translate-x-1 transition-transform" />
+                                    <ChevronRight className="w-4 h-4 translate-x-0 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                                 </div>
                             </Link>
                         );

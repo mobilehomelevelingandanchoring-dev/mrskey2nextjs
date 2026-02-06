@@ -42,7 +42,7 @@ export default function LocationsGrid() {
                             className="group p-6 sm:p-8 rounded-[2.5rem] bg-gray-50 border border-gray-100 hover:bg-[hsl(220,68%,18%)] hover:border-[hsl(220,68%,18%)] transition-all duration-300"
                         >
                             <p className="text-lg font-black group-hover:text-white transition-colors">{loc.name}</p>
-                            <p className="text-xs font-bold text-gray-400 group-hover:text-white/60 transition-colors uppercase tracking-widest mt-2">Auto Locksmith</p>
+                            <p className="text-xs font-bold text-gray-600 group-hover:text-white/80 transition-colors uppercase tracking-widest mt-2">Auto Locksmith</p>
                         </Link>
                     ))}
                 </div>

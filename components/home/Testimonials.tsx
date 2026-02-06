@@ -47,7 +47,7 @@ export default function Testimonials() {
                                 {[...Array(t.rating)].map((_, i) => (
                                     <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                                 ))}
-                                <span className="ml-2 text-xs font-bold text-gray-400 uppercase tracking-widest">{t.date}</span>
+                                <span className="ml-2 text-xs font-bold text-gray-600 uppercase tracking-widest">{t.date}</span>
                             </div>
                             <p className="text-gray-600 mb-8 flex-1 leading-relaxed italic text-lg font-medium">&quot;{t.text}&quot;</p>
                             <div className="flex items-center gap-4 pt-6 border-t border-gray-50">
@@ -56,7 +56,7 @@ export default function Testimonials() {
                                 </div>
                                 <div>
                                     <p className="font-black text-[hsl(220,68%,18%)]">{t.name}</p>
-                                    <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">{t.location}</p>
+                                    <p className="text-xs font-bold text-gray-600 uppercase tracking-widest">{t.location}</p>
                                 </div>
                             </div>
                         </div>
@@ -64,7 +64,7 @@ export default function Testimonials() {
                 </div>
 
                 <div className="mt-16 text-center">
-                    <p className="text-gray-400 font-bold uppercase tracking-[0.2em] text-sm">
+                    <p className="text-gray-600 font-bold uppercase tracking-[0.2em] text-sm">
                         Total 150+ Positive Reviews Across Tameside
                     </p>
                 </div>
