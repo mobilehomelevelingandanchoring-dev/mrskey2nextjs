@@ -1561,14 +1561,15 @@ export default function FAQPage() {
                                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                                     Auto Locksmith FAQ - 500+ Questions Answered
                                 </h1>
-                                <p className="text-xl md:text-2xl mb-8 text-gray-200">
+                                <p className="text-xl md:text-2xl mb-8 text-gray-100">
                                     Comprehensive answers about car locksmith services, key replacement, programming, pricing, and emergency assistance across Manchester. {SITE_CONFIG.siteName} - UK Company {SITE_CONFIG.companyNumber}.
                                 </p>
                                 <a
                                     href={`tel:${SITE_CONFIG.phone}`}
                                     className="inline-flex items-center gap-2 bg-[hsl(25,100%,50%)] hover:bg-[hsl(25,100%,45%)] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all shadow-lg hover:shadow-xl"
+                                    aria-label="Call auto locksmith for immediate help"
                                 >
-                                    <Phone className="w-5 h-5" />
+                                    <Phone className="w-5 h-5" aria-hidden="true" />
                                     Call Now: {SITE_CONFIG.phoneDisplay}
                                 </a>
                             </div>
@@ -1576,25 +1577,26 @@ export default function FAQPage() {
                     </section>
 
                     {/* Table of Contents */}
-                    <section className="py-12 bg-white border-b">
+                    <section className="py-12 bg-white border-b" aria-label="FAQ category navigation">
                         <div className="container mx-auto px-4">
                             <div className="max-w-5xl mx-auto">
                                 <h2 className="text-2xl font-bold mb-6 text-[hsl(220,68%,18%)]">FAQ Categories</h2>
-                                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                                <nav className="grid md:grid-cols-2 lg:grid-cols-3 gap-4" aria-label="Jump to FAQ category">
                                     {faqCategories.map((category) => (
                                         <a
                                             key={category.slug}
                                             href={`#${category.slug}`}
-                                            className="flex items-center gap-2 p-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors"
+                                            className="flex items-center gap-2 p-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-[hsl(25,100%,50%)]"
+                                            aria-label={`Jump to ${category.category} section with ${category.faqs.length} questions`}
                                         >
-                                            <ChevronDown className="w-5 h-5 text-[hsl(25,100%,50%)]" />
+                                            <ChevronDown className="w-5 h-5 text-[hsl(25,100%,50%)]" aria-hidden="true" />
                                             <div>
-                                                <div className="font-semibold">{category.category}</div>
-                                                <div className="text-sm text-gray-600">{category.faqs.length} questions</div>
+                                                <div className="font-semibold text-gray-900">{category.category}</div>
+                                                <div className="text-sm text-gray-700">{category.faqs.length} questions</div>
                                             </div>
                                         </a>
                                     ))}
-                                </div>
+                                </nav>
                             </div>
                         </div>
                     </section>
@@ -1615,17 +1617,17 @@ export default function FAQPage() {
                                         {category.faqs.map((faq, index) => (
                                             <details
                                                 key={index}
-                                                className="group bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-[hsl(25,100%,50%)] transition-colors"
+                                                className="group bg-white border border-gray-200 rounded-lg overflow-hidden hover:border-[hsl(25,100%,50%)] transition-colors focus-within:ring-2 focus-within:ring-[hsl(25,100%,50%)]"
                                             >
-                                                <summary className="flex items-start justify-between gap-4 p-6 cursor-pointer list-none">
+                                                <summary className="flex items-start justify-between gap-4 p-6 cursor-pointer list-none focus:outline-none">
                                                     <div className="flex-1">
                                                         <h3 className="font-bold text-lg text-[hsl(220,68%,18%)] group-hover:text-[hsl(25,100%,50%)]">
                                                             {faq.question}
                                                         </h3>
                                                     </div>
-                                                    <ChevronDown className="w-5 h-5 text-gray-500 flex-shrink-0 mt-1 transition-transform group-open:rotate-180" />
+                                                    <ChevronDown className="w-5 h-5 text-gray-600 flex-shrink-0 mt-1 transition-transform group-open:rotate-180" aria-hidden="true" />
                                                 </summary>
-                                                <div className="px-6 pb-6 text-gray-700 leading-relaxed">
+                                                <div className="px-6 pb-6 text-gray-800 leading-relaxed">
                                                     {faq.answer}
                                                 </div>
                                             </details>
@@ -1643,14 +1645,15 @@ export default function FAQPage() {
                                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
                                     Still Have Questions?
                                 </h2>
-                                <p className="text-xl mb-8 text-gray-200">
+                                <p className="text-xl mb-8 text-gray-100">
                                     Call our expert locksmiths 24/7 for personalized answers and immediate assistance across Manchester.
                                 </p>
                                 <a
                                     href={`tel:${SITE_CONFIG.phone}`}
                                     className="inline-flex items-center gap-2 bg-[hsl(25,100%,50%)] hover:bg-[hsl(25,100%,45%)] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all shadow-lg hover:shadow-xl"
+                                    aria-label="Call 24/7 locksmith hotline for questions and assistance"
                                 >
-                                    <Phone className="w-5 h-5" />
+                                    <Phone className="w-5 h-5" aria-hidden="true" />
                                     CALL {SITE_CONFIG.phoneDisplay}
                                 </a>
                             </div>
@@ -1658,13 +1661,13 @@ export default function FAQPage() {
                     </section>
 
                     {/* Internal Links */}
-                    <section className="py-8 bg-gray-100">
-                        <div className="container mx-auto px-4 text-center">
-                            <Link href="/" className="text-blue-600 hover:underline mx-2">Home</Link> |
-                            <Link href="/services" className="text-blue-600 hover:underline mx-2">Services</Link> |
-                            <Link href="/locations" className="text-blue-600 hover:underline mx-2">Locations</Link> |
-                            <Link href="/contact" className="text-blue-600 hover:underline mx-2">Contact</Link>
-                        </div>
+                    <section className="py-8 bg-gray-100" aria-label="Site navigation">
+                        <nav className="container mx-auto px-4 text-center" aria-label="Footer navigation">
+                            <Link href="/" className="text-blue-700 hover:underline mx-2 font-semibold">Home</Link> |
+                            <Link href="/services" className="text-blue-700 hover:underline mx-2 font-semibold">Services</Link> |
+                            <Link href="/locations" className="text-blue-700 hover:underline mx-2 font-semibold">Locations</Link> |
+                            <Link href="/contact" className="text-blue-700 hover:underline mx-2 font-semibold">Contact</Link>
+                        </nav>
                     </section>
                 </main>
 

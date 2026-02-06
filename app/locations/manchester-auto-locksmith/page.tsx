@@ -71,7 +71,7 @@ export default function ManchesterLocationPage() {
                                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
                                     Auto Locksmith Manchester | 24/7 Emergency Service
                                 </h1>
-                                <p className="text-xl md:text-2xl mb-8 text-gray-200">
+                                <p className="text-xl md:text-2xl mb-8 text-gray-100">
                                     Emergency car locksmith serving Manchester M1-M99 postcodes. Lost keys, lockouts, programming. 30-90 minute response across City Centre, Salford Quays, Didsbury, M60 motorway.
                                 </p>
                                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -277,14 +277,15 @@ export default function ManchesterLocationPage() {
                                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
                                     Need a Locksmith in Manchester?
                                 </h2>
-                                <p className="text-xl mb-8 text-gray-200">
+                                <p className="text-xl mb-8 text-gray-100">
                                     We are the local experts you can trust. Call us 24/7.
                                 </p>
                                 <a
                                     href={`tel:${SITE_CONFIG.phone}`}
                                     className="inline-flex items-center gap-2 bg-[hsl(25,100%,50%)] hover:bg-[hsl(25,100%,45%)] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all shadow-lg hover:shadow-xl"
+                                    aria-label="Call 24/7 emergency locksmith for immediate assistance"
                                 >
-                                    <Phone className="w-5 h-5" />
+                                    <Phone className="w-5 h-5" aria-hidden="true" />
                                     CALL {SITE_CONFIG.phoneDisplay}
                                 </a>
                             </div>
@@ -292,11 +293,11 @@ export default function ManchesterLocationPage() {
                     </section>
 
                     {/* Internal Links */}
-                    <section className="py-8 bg-gray-100">
+                    <section className="py-8 bg-gray-100" aria-label="Related pages">
                         <div className="container mx-auto px-4 text-center">
-                            <Link href="/locations" className="text-blue-600 hover:underline mx-2">Back to Locations</Link> |
-                            <Link href="/services/car-lockout" className="text-blue-600 hover:underline mx-2">Car Lockout Service</Link> |
-                            <Link href="/locations/denton-auto-locksmith" className="text-blue-600 hover:underline mx-2">Denton Auto Locksmith</Link>
+                            <Link href="/locations" className="text-blue-700 hover:underline mx-2 font-semibold">Back to Locations</Link> |
+                            <Link href="/services/car-lockout" className="text-blue-700 hover:underline mx-2 font-semibold">Car Lockout Service</Link> |
+                            <Link href="/locations/denton-auto-locksmith" className="text-blue-700 hover:underline mx-2 font-semibold">Denton Auto Locksmith</Link>
                         </div>
                     </section>
                 </main>
